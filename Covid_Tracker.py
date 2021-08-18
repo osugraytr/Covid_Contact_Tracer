@@ -47,12 +47,20 @@ app = Flask(__name__)
 #------------------------------------------|
 
 Colors = {
-    "Primary" : "g-white",
-    "Secondary" : "g-black",
+    "Primary": "g-white",
+    "Secondary": "g-black",
     "Background_Primary" : "g-gray",
     "Background_Secondary" : "g-lightgray",
-    "Button_Primary": "g-blue",
-    "Button_Secondary": "g-red"
+    "Border_Primary": "g-border-color-Covid-Red-thicc"
+}
+
+Buttons = {
+    "Button_Style": "g-btn-style",
+    "Button_Primary": "g-Covid-Light-orange",
+    "Button_Secondary": "g-Covid-Light-yellow",
+    "Button_Primary_Text": "g-text-white",
+    "Button_Secondary_Text": "g-text-black",
+    "Button_Text_Size": "g-responsive-text-2"
 }
 
 #
@@ -111,20 +119,43 @@ def Sample_Post(  ):
 @app.route("/")
 def Landing_Page():
     #return("Hello")
-    return render_template('Landing_Page.html', title="Landing Page", Colors=Colors)
+    return render_template('Landing_Page.html', title="Landing Page", Buttons=Buttons, Colors=Colors)
 
 #------------------------------------------|
-#    # /Sample_Route
+#    # /Routes
 #------------------------------------------|
 
-# Step 1: 
-@app.route("/Sample_Route")
-
-def Sample_Route():
+# Report_Covid_19
+@app.route("/Report_Covid_19")
+def Report_Covid_19():
     
-    Title = "Sample Route"
+    Title = "Report Covid 19"
 
-    return render_template('Sample/Sample_Route.html', Title=Title, Colors=Colors)
+    return render_template('Secondary/Report_Covid_19.html', Title=Title, Buttons=Buttons, Colors=Colors)
+
+# Covid_19 Report Map
+@app.route("/Covid_19_Map")
+def Covid_19_Map():
+    
+    Title = "Covid-19 Report Map"
+
+    return render_template('Secondary/Covid_19_Map.html', Title=Title, Buttons=Buttons, Colors=Colors)
+
+# Covid_19 Tracker About 
+@app.route("/About_Tracker")
+def About_Tracker():
+    
+    Title = "Covid_19 Tracker About"
+
+    return render_template('Secondary/About_Tracker.html', Title=Title, Buttons=Buttons, Colors=Colors)
+
+# Covid-19 Tracker Donate 
+@app.route("/Donate")
+def Donate():
+    
+    Title = "Covid-19 Tracker Donate"
+
+    return render_template('Secondary/Donate.html', Title=Title, Buttons=Buttons, Colors=Colors)
 
 #\
 # \
@@ -156,15 +187,20 @@ if __name__ == "__main__":
     Application_JOBS = [  ]
           
     # Add APPLICATION to the Multiprocessor
-    ip = 'localhost'
+    ip = '192.168.4.153'
+    #ip = '127.0.0.1'
+    #ip = 'localhost'
     port = 5000
-    Debug = False
+    Debug = True
 
-    # JOB: 1
-    # Application
-    Default_Application = multiprocessing.Process(target=Start_Application, args=( ip, port, Debug,))
-    Application_JOBS.append( Default_Application )
-    Default_Application.start()
+    if(Debug):
+        app.run( host=ip, port=port, debug=Debug )
+    else:
+        # JOB: 1
+        # Application
+        Default_Application = multiprocessing.Process(target=Start_Application, args=( ip, port, Debug,))
+        Application_JOBS.append( Default_Application )
+        Default_Application.start()
 
 #
 #\

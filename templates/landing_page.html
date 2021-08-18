@@ -20,7 +20,7 @@
     </title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/Official_KIBs_Logo.png') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/Covid_19_Virus.png') }}">
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/GrayPry_Globals.css') }}">
@@ -33,7 +33,7 @@
 </head>
 <body class="g-FlexFit  g-century-gothic bg ">
 
-    <div class="g-height100 g-width100 {{ Colors['Primary'] }} g-centered-text">
+    <div class="g-height100 g-width100 {{ Colors['Border_Primary'] }} {{ Colors['Primary'] }} g-centered-text">
 
         <!-- Logo Section -->
         <div class="g-height55 g-width100">
@@ -63,7 +63,7 @@
                     <!-- Report Covid-19 -->
                     <div class="g-height50 g-width100  g-FL">
                         <form action="/Report_Covid_19">
-                            <button class="g-FlexFit {{ Colors['Button_Next'] }}" type="submit">
+                            <button class="g-FlexFit {{ Buttons['Button_Primary'] }} {{ Buttons['Button_Secondary_Text'] }} {{ Buttons['Button_Text_Size'] }} {{ Buttons['Button_Style'] }} g-border-color-no-top-left" type="submit">
                                 Report Covid-19
                             </button>
                         </form>
@@ -71,9 +71,12 @@
                 </div>
                 <div class="g-height25 g-width100  g-FL">
                     <!-- Covid-19 Map -->
-                    <div class="g-height50 g-width100  g-FL">
+                    <div class="g-height50 g-width5  g-FL">
+
+                    </div>
+                    <div class="g-height50 g-width90  g-FL">
                         <form action="/Covid_19_Map">
-                            <button class="g-FlexFit {{ Colors['Button_Next'] }}" type="submit">
+                            <button class="g-FlexFit {{ Buttons['Button_Secondary'] }} {{ Buttons['Button_Secondary_Text'] }} {{ Buttons['Button_Text_Size'] }} {{ Buttons['Button_Style'] }} g-border-color-no-top-left" type="submit">
                                 Covid-19 Map
                             </button>
                         </form>
@@ -81,9 +84,12 @@
                 </div>
                 <div class="g-height25 g-width100  g-FL">
                     <!-- About Tracker -->
-                    <div class="g-height50 g-width100  g-FL">
+                    <div class="g-height50 g-width10  g-FL">
+
+                    </div>
+                    <div class="g-height50 g-width80  g-FL">
                         <form action="/About_Tracker">
-                            <button class="g-FlexFit {{ Colors['Button_Next'] }}" type="submit">
+                            <button class="g-FlexFit {{ Buttons['Button_Primary'] }} {{ Buttons['Button_Secondary_Text'] }} {{ Buttons['Button_Text_Size'] }} {{ Buttons['Button_Style'] }} g-border-color-no-top-left" type="submit">
                                 About Tracker
                             </button>
                         </form>
@@ -91,9 +97,12 @@
                 </div>
                 <div class="g-height25 g-width100  g-FL">
                     <!-- Donate -->
-                    <div class="g-height50 g-width100  g-FL">
+                    <div class="g-height50 g-width15  g-FL">
+
+                    </div>
+                    <div class="g-height50 g-width70  g-FL">
                         <form action="/Donate">
-                            <button class="g-FlexFit {{ Colors['Button_Next'] }}" type="submit">
+                            <button class="g-FlexFit {{ Buttons['Button_Secondary'] }} {{ Buttons['Button_Secondary_Text'] }} {{ Buttons['Button_Text_Size'] }} {{ Buttons['Button_Style'] }} g-border-color-no-top-left" type="submit">
                                 Donate
                             </button>
                         </form>

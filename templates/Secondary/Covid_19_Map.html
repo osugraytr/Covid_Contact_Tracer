@@ -1,0 +1,45 @@
+<!--
+    Wait.... You're actually looking at my code........ Thank you!!!!
+    Hopefully everything is easy to find. My goal was to have this site completely hosted on github for free.
+    My custom made css templete follows my own website design methods. These methods are based on percentages.
+    To do this I emplemented a series of clickable items that would lead to each scene. This is controlled by conditionals in the <script> tag
+    If you would like to colaberate...
+    Email me at:
+        travis.c.j.gray@gmail.com
+    with subject 'CONCATINATE'
+
+    Navigate to:
+        127.0.0.1:5000/
+
+-->
+
+<html class="g-FlexFit">
+<head>
+    <title>
+        {{Title}}
+    </title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/Covid_19_Virus.png') }}">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/GrayPry_Globals.css') }}">
+
+    <!-- Local css -->
+
+    <style>
+    </style>
+
+</head>
+<body class="g-FlexFit  g-century-gothic bg ">
+
+    <div class="g-height100 g-width100 {{ Colors['Primary'] }}">
+        Covid-19 Report Map
+    </div>
+
+    <script>
+                    // Local Javascript
+    </script>
+
+</body>
+</html>
