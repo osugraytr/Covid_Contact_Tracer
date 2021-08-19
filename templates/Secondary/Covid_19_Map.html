@@ -19,13 +19,23 @@
         {{Title}}
     </title>
 
+    <!--
+    script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    -->
+    <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet" />
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/Covid_19_Virus.png') }}">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/GrayPry_Globals.css') }}">
-
     <!-- Local css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/GrayPry_Globals.css') }}">
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/leaflet/leaflet.css') }}">-->
+    <!-- Functional Local JS -->
+    <script type="text/javascript" src="{{ url_for('static', filename='JavaScript/JQuery/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='JavaScript/leaflet/leaflet.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='JavaScript/leaflet/Mouse_Position.js') }}"></script>
+    <!-- Local JS -->
+    <script type="text/javascript" src="{{ url_for('static', filename='JavaScript/Secondary/Covid_19_Map.js') }}"></script>
 
     <style>
     </style>
@@ -34,11 +44,16 @@
 <body class="g-FlexFit  g-century-gothic bg ">
 
     <div class="g-height100 g-width100 {{ Colors['Primary'] }}">
-        Covid-19 Report Map
+        
+        <div class="g-height10 g-width100 {{ Colors['Secondary'] }} g-FL">
+            Covid-19 Map
+        </div>
+        
+        <div class="g-height90 g-width100 g-FL" id="osm-map"></div>
+
     </div>
 
     <script>
-                    // Local Javascript
     </script>
 
 </body>
