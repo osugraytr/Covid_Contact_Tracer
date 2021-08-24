@@ -27,6 +27,8 @@
 
     <!-- Local JS -->
     <script type="text/javascript" src="{{ url_for('static', filename='JavaScript/JQuery/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='JavaScript/Secondary/Report_Covid_19.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='JavaScript/Global_Functions.js') }}"></script>
 
     <style>
     </style>
@@ -34,8 +36,32 @@
 </head>
 <body class="g-FlexFit  g-century-gothic bg ">
 
-    <div class="g-height100 g-width100 {{ Colors['Primary'] }}">
-        Report Covid Here
+    <div class="g-height100 g-width100 {{ Colors['Primary'] }} g-scroll-a">
+
+        <div class="g-height20 g-width100 g-responsive-text-10 g-centered-text g-FL"> <!-- Title -->
+            Covid Tracker
+        </div>
+        <div class="g-height10 g-width100 g-centered-text g-red g-FL">
+            <!-- Buffer Top -->
+            <div class="g-height15 g-width100 g-centered-text g-blue g-FL">
+            </div>
+            <div id="Countries_Container" class="g-height70 g-width50 g-scroll-a g-FL" onclick="Get_All_Countries()">
+                Country Turn into Dropdown
+            </div>
+
+            <div id="City_Container" class="g-height70 g-width50 g-scroll-a g-FL">
+                <input id="City" class="g-FlexFit" placeholder=" City..." />
+            </div>
+
+            <!-- Buffer Bottom -->
+            <div class="g-height15 g-width100 g-centered-text g-yellow g-FL">
+            </div>
+        </div>
+        
+        <div class="g-height50 g-width100 g-FL">
+
+            Three
+        </div>
     </div>
 
     <script>

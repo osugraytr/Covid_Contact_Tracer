@@ -1,9 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\static",
     "\\static\\css",
-    "\\static\\images",
+    "\\static\\css\\leaflet",
+    "\\static\\JavaScript",
+    "\\static\\JavaScript\\leaflet",
+    "\\static\\JavaScript\\Secondary",
+    "\\templates",
     "\\templates\\Secondary"
   ],
+  "SelectedNode": "\\Covid_Tracker.py",
   "PreviewInSolutionExplorer": false
 }

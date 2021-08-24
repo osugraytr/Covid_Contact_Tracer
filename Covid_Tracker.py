@@ -10,6 +10,10 @@
 
 from flask import Flask, render_template, request
 import multiprocessing
+import requests
+
+#import geopy
+from geopy.geocoders import Nominatim
 
 #------------------------------------------|
 #    # Import other python modules
@@ -17,6 +21,7 @@ import multiprocessing
 
 import scripts.Contact_Trace_Stuff.Contact_Tracing_Functions as Contact_Tracing_Functions
 import scripts.Map_Stuff.Map_Functions as Map_Functions
+import scripts.IO_Stuff.JSON_Functions as JSON_Functions
 
 #
 #\
@@ -99,6 +104,25 @@ def Sample_Post(  ):
         ARG_Info = request.args.to_dict()
 
         return JSON_Info
+
+    return "Error"
+
+# Get All Countries
+@app.route("/Get_All_Countries", methods=['POST'])
+def Get_All_Countries(  ):
+    print( "Inside Get_All_Countries(  )" )
+
+    if request.method == "POST":
+
+        JSON_Info = request.get_json()
+        #ARG_Info = request.args.to_dict()
+        print( "Inside Get_All_Countries(  ): Post conditional" )
+
+        All_Countries = JSON_Functions.Get_Country_Names()
+
+        print(All_Countries)
+
+        return { "Countries": All_Countries }
 
     return "Error"
 
@@ -193,8 +217,18 @@ if __name__ == "__main__":
     port = 5000
     Debug = True
 
-    if(Debug):
+    if( Debug ):
         app.run( host=ip, port=port, debug=Debug )
+
+        #print( JSON_Functions.Get_Country_names(  ) )
+
+        #Address = input()
+        #Partial = Map_Functions.Geocode_Partial( Address )
+        #if( Partial != "None" ):
+        #    Lat_Long = Map_Functions.Geocode_Location_Based_Off_City( Partial, ['lat', 'lon', 'boundingbox'] )
+        #    print( Lat_Long )
+        #else:
+        #    print( "No place found" )
     else:
         # JOB: 1
         # Application
