@@ -1097,6 +1097,12 @@ button {
     font-family: CenturyGothic, AppleGothic, sans-serif;
 }
 
+.g-centered-text-vh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .g-centered-text {
     text-align: center;
 }
@@ -1347,6 +1353,10 @@ g-FC {
     font-size: 10vh; /* 10% video height */
 }
 
+.g-text-16px {
+    font-size: 16px; /* 16 px */
+}
+
 .g-no-border {
     border: none;
 }
@@ -1363,6 +1373,14 @@ g-FC {
     width: 50%;
     height: 90%;
     z-index: 1;
+}
+
+.g-Covid-Tool-Font {
+    font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.g-San-Fran {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .g-Roboto {
